@@ -132,6 +132,23 @@ class Mix(BaseAttack.BaseAttack):
         rewrapping(self, param_dict, rewrap, timestamp_next_pkt)
 
 
+    def generate_attack_pcap(self):
+        """
+        Creates a pcap containing the attack packets.
+
+        :return: The location of the generated pcap file.
+        """
+
+        # write attack packets to pcap
+        if self.readwrite != 'sequence': # sequence mode automatically writes to pcap
+            self.attack_start_utime = self.packets[0].time
+            self.attack_end_utime = self.packets[-1].time
+
+            self.path_attack_pcap = self.write_attack_pcap(self.packets)
+
+        # return packets sorted by packet time_sec_start
+        return len(self.packets), self.path_attack_pcap
+
 #####################
 ###### HELPERS !<!
 #####################
