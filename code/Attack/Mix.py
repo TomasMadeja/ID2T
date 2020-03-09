@@ -5,7 +5,7 @@ sys.path.insert(
     0, 
     str( 
         (
-            Path(Util.ROOT_DIR).parent / 'submodules/Trace-Manipulation'
+            Path(Util.ROOT_DIR) / 'submodules/Trace-Manipulation'
         ).resolve() 
     )
 )
