@@ -1,6 +1,6 @@
 import sys
 from pathlib import Path
-import code.Lib.Utility as Util
+import Lib.Utility as Util
 sys.path.insert(
     0, 
     str( 
@@ -14,7 +14,7 @@ import logging
 
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
-from code.Lib.Utility import handle_most_used_outputs
+from Lib.Utility import handle_most_used_outputs
 from TM_dependencies import stat_util
 ## Setting up outside dependency in TMlib
 stat_util.handle_most_used_outputs = handle_most_used_outputs
@@ -37,8 +37,8 @@ from Attack.Parameter import (
 
 )
 
-import code.Core.Statistics as Statistics
-import code.Lib.PcapFile as PcapFile
+import Core.Statistics as Statistics
+import Lib.PcapFile as PcapFile
 
 class Mix(BaseAttack.BaseAttack):
 
