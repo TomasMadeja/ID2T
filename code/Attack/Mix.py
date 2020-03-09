@@ -60,7 +60,7 @@ class Mix(BaseAttack.BaseAttack):
 
         self.attack_statistics = None
 
-        self.supported_params.update([
+        self.update_params([
             Parameter(self.CONFIG_PATH, FilePath)
         ])
 
