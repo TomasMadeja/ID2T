@@ -77,6 +77,9 @@ class Mix(BaseAttack.BaseAttack):
                 value = 0
             if param == self.INJECT_AT_TIMESTAMP:
                 value = float(0)
+
+            if value is None:
+                return False
             return self.add_param_value(
                 param, 
                 value
