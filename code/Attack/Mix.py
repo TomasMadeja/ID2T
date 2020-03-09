@@ -1,10 +1,11 @@
 import sys
 from pathlib import Path
+import code.Lib.Utility as Util
 sys.path.insert(
     0, 
     str( 
         (
-            Path(__file__).parent / Path('../submodules/Trace-Manipulation') 
+            Path(Util.ROOT_DIR).parent / 'submodules/Trace-Manipulation'
         ).resolve() 
     )
 )
@@ -36,7 +37,6 @@ from Attack.Parameter import (
 
 )
 
-import code.Lib.Utility as Util
 import code.Core.Statistics as Statistics
 import code.Lib.PcapFile as PcapFile
 
